@@ -7,22 +7,23 @@
   id="todoText"
   placeholder="enter todo"
   v-model="todoText"
-  @keydown.enter="addNewTodo"
+  @keydown.enter="addNewTodo(todoText)"
 />
 </template>
 
 <script>
 export default {
+    props:{
+        addNewTodo:{
+            type:Function,
+            required:true
+        }
+    },
     data(){
         return{
             todoText:null
         }
     },
-    methods:{
-        addNewTodo(){
-            this.$emit("add-todo",this.todoText)// this emit send data to parent component
-            this.todoText=null
-        }
-    }
+ 
 }
 </script>
