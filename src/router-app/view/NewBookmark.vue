@@ -47,6 +47,7 @@ export default {
   
       this.$store.commit("addProduct", newitem);
       this.$store.dispatch("createProduct", newitem);
+      
     },
   },
 };

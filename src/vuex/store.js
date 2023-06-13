@@ -16,7 +16,6 @@ const store = createStore({
     ],
   },
   getters: {
-
     wooden: (state) => state.itemList.filter((e) => e.type === "mobilya"),
     activeuser(state) {
       const user = { ...state.person };
@@ -26,10 +25,9 @@ const store = createStore({
   },
   actions: {
     newItem(ctx, item) {
-      ctx.dispatch("newItems",item);// bu dispacth actions içinde olan asenkron fonksiyonları çağırmak için
+      ctx.dispatch("newItems", item); // bu dispacth actions içinde olan asenkron fonksiyonları çağırmak için
       setTimeout(() => {
-        ctx.commit("newItems",item);// bu commit mutations  içinde olan senkron fonksiyonları çağırmak için
-
+        ctx.commit("newItems", item); // bu commit mutations  içinde olan senkron fonksiyonları çağırmak için
       }, 2000);
     },
   },
